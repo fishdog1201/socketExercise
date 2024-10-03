@@ -4,7 +4,6 @@
 ThreadPool::ThreadPool(int min, int max) : m_maxThreads(max),
 m_minThreads(min), m_stop(false), m_exitNumber(0)
 {
-    //m_idleThreads = m_curThreads = max / 2;
     m_idleThreads = m_curThreads = min;
     cout << "线程数量: " << m_curThreads << endl;
     m_manager = new thread(&ThreadPool::manager, this);

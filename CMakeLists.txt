@@ -8,3 +8,4 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 add_subdirectory(basic)
 add_subdirectory(multiThread)
+add_subdirectory(threadPoolServer)

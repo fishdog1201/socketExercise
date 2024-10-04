@@ -32,11 +32,14 @@ int main()
     fd_set readSet;
     FD_ZERO(&readSet);
     FD_SET(lfd, &readSet);
+    struct timeval tv;
+    tv.tv_sec = 2;
+    tv.tv_usec = 0;
 
     int maxFd = lfd;
     while (1) {
         fd_set tmp = readSet;   // Why use a tmp fd_set instead of original fd_set
-        int ret = select(maxFd + 1, &tmp, NULL, NULL, NULL);
+        int ret = select(maxFd + 1, &tmp, NULL, NULL, &tv);
         // listen fd?
         if (FD_ISSET(lfd, &tmp)) {
             std::cout << "listen fd is detected\n";

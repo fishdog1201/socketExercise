@@ -2,6 +2,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <thread>
+#include <sys/select.h>
 
 void acceptConn(int lfd, int* maxFd, fd_set* readSet)
 {
